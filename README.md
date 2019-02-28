@@ -1,5 +1,4 @@
-# bjj
-Brazilian Jiu-Jitsu Practise MEAN Stack App
+# Brazilian Jiu-Jitsu Practise MEAN Stack App
 
 App to practise learning MEAN Stack based around BJJ.
 
