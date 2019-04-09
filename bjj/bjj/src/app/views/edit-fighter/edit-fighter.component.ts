@@ -21,11 +21,11 @@ export class EditFighterComponent implements OnInit {
         this.fighter = new Fighter();
         this.belts = ['White', 'Blue', 'Purple', 'Brown', 'Black'];
         this.stripes = [0, 1, 2, 3, 4];
-        this.route.params.subscribe(params => { // gets the route parameter which will be the fighter's ObjectId
+        this.route.params.subscribe(params => { 
             this.fighterId = params.id;
             console.log('route params: ', params);
         });
-        this.getFighter(this.fighterId); // call the getFighter function using the fighter's Object Id
+        this.getFighter(this.fighterId);
     }
 
     getFighter(fighterId) {
@@ -39,7 +39,6 @@ export class EditFighterComponent implements OnInit {
 
     updateFighter(editFighterForm: NgForm) {
         console.log('fighterForm: ', editFighterForm.value);
-        // tslint:disable-next-line:max-line-length
         this.fighter = Object.assign(this.fighter, editFighterForm.value);
         console.log('Fighter Updated details', this.fighter);
         this.http.put('/api/update-fighter', this.fighter).subscribe(() => console.log('Successfully posted!'));
