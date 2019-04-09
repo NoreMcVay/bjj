@@ -16,28 +16,27 @@ export class FightersComponent implements OnInit {
   public fighterId: any;
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit() { // On component initialisation, make a get request to get all fighters details
+  ngOnInit() { 
       this.http.get('/api/fighters').subscribe(fighters => {
       this.fighters = fighters;
       console.log('GET FIGHTERS: ', this.fighters);
     });
   }
 
-  // tslint:disable-next-line:max-line-length
-  getFighterToEdit(index) {  // Notice on Line 6 of the html file,let i = index and then we pass i to the function. This is the index number of the fighter in the fighters array so we can locate the selected fighter
+  getFighterToEdit(index) {  
       console.log('button works');
       this.fighter = this.fighters[index];
-      this.router.navigate(['/edit-fighters', this.fighter._id]); // navigate the browser to /edit-fighters/this.fighters._id
+      this.router.navigate(['/edit-fighters', this.fighter._id]); 
   }
 
-  getFighterProfile(index) { // same thing with the index again
+  getFighterProfile(index) { 
       this.fighter = this.fighters[index];
       this.router.navigate(['/fighter-profile', this.fighter._id]);
   }
 
   deleteFighter(index) {
       console.log(index);
-      this.fighterId = this.fighters[index]._id; // CHANGED TO CONST
+      this.fighterId = this.fighters[index]._id; 
       this.http.delete('/api/delete-fighter/' + `${this.fighterId}`).subscribe((fighters) => {
           this.fighters = fighters;
           console.log('Delete Fighter Worked along with automatic data refresh!');
