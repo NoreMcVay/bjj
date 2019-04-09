@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const fighterModel = require('../models/fighter');
 const instructorModel = require('../models/instructor');
 
-const mongodb = 'mongodb://localhost:27017/bjj';//tells us where to locate our database
+const mongodb = 'mongodb://localhost:27017/bjj';
 mongoose.connect(mongodb, {useNewUrlParser: true})
 .then(() => {
     console.log("CONNECTED.");
@@ -36,10 +36,10 @@ router.get('/instructors', (req, res) => {
 });
 
 
-router.get('/fighter/:id', (req, res) => { //the :id is called a route parameter and it can be accessed using req.params.id
+router.get('/fighter/:id', (req, res) => { 
     fighterModel
-        .find({_id: req.params.id}) //find is the function to find all documents with _id or req.params.id
-        .then(doc => {   //then and catch handle promises. Promises are what came before observables.
+        .find({_id: req.params.id}) 
+        .then(doc => {   
             console.log("Selected Fighter Details:", doc)
             res.send(doc);
         })
@@ -49,10 +49,10 @@ router.get('/fighter/:id', (req, res) => { //the :id is called a route parameter
 });
 
 
-router.get('/instructor/:id', (req, res) => { //the :id is called a route parameter and it can be accessed using req.params.id
+router.get('/instructor/:id', (req, res) => { 
     instructorModel
-        .find({_id: req.params.id}) //find is the function to find all documents with _id or req.params.id
-        .then(doc => {   //then and catch handle promises. Promises are what came before observables.
+        .find({_id: req.params.id}) 
+        .then(doc => {   
             console.log("Selected Fighter Details:", doc)
             res.send(doc);
         })
@@ -60,11 +60,6 @@ router.get('/instructor/:id', (req, res) => { //the :id is called a route parame
             console.error(err)
         });
 });
-
-// let fighter = new fighterModel({..data sent in from the front end...})
-//its creating a new model instance USING the schema template to interact with database.
-//the model is created using a schema. if data supplied to model doesnt match the schema = errors!
-//it will interact with the database using the NEW data posted in from front end.
 
 
 router.post('/add-fighter', (req, res) => { console.log(req.body);
