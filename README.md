@@ -2,7 +2,7 @@
 
 App to practise learning MEAN Stack based around BJJ.
 
-1. Unzip bjj.zip
+1. open bjj folder
 2. 'npm install' in '/bjj' and '/bjj/bjj'
 3. 'ng build' from '/bjj/bjj' folder 
 4. 'node server' from '/bjj/bjj/server' folder
