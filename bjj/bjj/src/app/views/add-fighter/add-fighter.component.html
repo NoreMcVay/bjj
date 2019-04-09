@@ -3,7 +3,7 @@
         <div class="form_bg">
             <h1 class="text-center">Add Fighter</h1>
 
-            <form #addFighterForm="ngForm" (ngSubmit)="addNewFighter(addFighterForm)" novalidate> <!--We pass the form as the parameter to addNewFighter function-->
+            <form #addFighterForm="ngForm" (ngSubmit)="addNewFighter(addFighterForm)" novalidate>
                 <div class="form-group">
                     <label for="firstname">Firstname:</label>
                     <input type="text" class="form-control" id="firstname" [(ngModel)]="fighter.firstname" name="firstname" placeholder="Enter firstname" required>
