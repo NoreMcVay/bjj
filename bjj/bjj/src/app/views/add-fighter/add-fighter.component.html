@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="form_bg">
+            <h1 class="text-center">Add Fighter</h1>
+
+            <form #addFighterForm="ngForm" (ngSubmit)="addNewFighter(addFighterForm)" novalidate> <!--We pass the form as the parameter to addNewFighter function-->
+                <div class="form-group">
+                    <label for="firstname">Firstname:</label>
+                    <input type="text" class="form-control" id="firstname" [(ngModel)]="fighter.firstname" name="firstname" placeholder="Enter firstname" required>
+                </div>
+                <div class="form-group">
+                    <label for="surname">Surname:</label>
+                    <input type="text" class="form-control" id="surname" [(ngModel)]="fighter.surname" name="surname" placeholder="Enter surname">
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="text" class="form-control" id="age" [(ngModel)]="fighter.age" name="age" placeholder="Enter age">
+                </div>
+                <div class="form-group">
+                    <label for="belt">Belt:</label>
+                    <select class="form-control" id="belt" [(ngModel)]="fighter.belt" name="belt">
+                        <option *ngFor="let belt of belts" [value]="belt"> {{belt}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="stripe">Stripes:</label>
+                    <select class="form-control" id="stripe" [(ngModel)]="fighter.stripe" name="stripe">
+                        <option *ngFor="let stripe of stripes" [value]="stripe"> {{stripe}}</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-danger pull-right">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

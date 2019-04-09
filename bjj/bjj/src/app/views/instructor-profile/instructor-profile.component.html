@@ -1,0 +1,19 @@
+<h1 class="mb-3">Fighter Profile</h1>
+
+<div class="card p-3 m-3">
+    <div class="text-center">
+        <img class="card-img-top mb-3 rounded" src="../assets/images/novaforca.jpg" style="width:100px;" alt="fighter-image">
+    </div>
+    <ul class="list-group">
+        <li class="list-group">Firstname: {{ instructor.firstname }}</li>
+        <li class="list-group">Surname: {{instructor.surname}}</li>
+        <li class="list-group">Age: {{instructor.age}}</li>
+        <li class="list-group">Belt: {{instructor.belt}}</li>
+        <li class="list-group">Stripe: {{instructor.stripe}}</li>
+        <li class="list-group">Stripe: {{instructor.year}}</li>
+
+    </ul>
+</div>
+
+<a routerLink="/instructors" class="btn btn-danger m-1">Back</a>
+<a [routerLink]="['/edit-instructors/', instructorId]" class="btn btn-danger black-background white">Edit</a>

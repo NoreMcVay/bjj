@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+        <h1 class="text-center">Fighters</h1>
+    </div>
+    <div class="row">
+        <div class="card m-2" *ngFor="let fighter of fighters; let i = index">
+            <div class="text-center m-1">
+                <button class="btn btn-primary" (click)="getFighterProfile(i)">View Full Profile</button>
+                <button class="btn btn-primary" (click)="getFighterToEdit(i)">Edit</button>
+                <button class="btn btn-primary" (click)="deleteFighter(i)">x</button>
+            </div>
+            <img class="card-img-top mt-3 rounded" src="../assets/images/dog.jpg" style="max-width:50%;margin-left:25%;" alt="fighter-image">
+            <div class="card-body">
+                <h5 class="card-title">{{ fighter.firstname }} {{ fighter.surname }}</h5>
+                <p class="card-text mb-0">ObjectId:  <small>{{ fighter._id }}</small></p>
+                <p class="card-text mb-0">Age: <span class="pull-right">{{ fighter.age }}</span></p>
+                <p class="card-text mb-0">Belt:  {{ fighter.belt }}</p>
+                <p class="card-text">Stripes:  {{ fighter.stripe }}</p>
+            </div>
+        </div>
+    </div>
+</div>

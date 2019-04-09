@@ -1,0 +1,19 @@
+<!--This is the main component html
+ we use a routerLink instead of a href
+The router-outlet is where the child components will be displayed-->
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-default">
+                <!--routerLink is part of the routerModule and changes the URL.-->
+                <a routerLink="/"class="btn btn-danger mr-1">Home</a>
+                <a routerLink="/add-fighter" class="btn btn-danger mr-1">Add Fighter</a>
+                <a routerLink="/fighters" class="btn btn-danger mr-1">See Fighters</a>
+                <a routerLink="/add-instructor" class="btn btn-danger mr-1">Add Instructor</a>
+                <a routerLink="/instructors" class="btn btn-danger mr-1">See Instructors</a>
+        </nav>
+    </div>
+    <div class="row">
+        <router-outlet></router-outlet>
+    </div>
+</div>

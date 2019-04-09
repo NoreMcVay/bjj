@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="form_bg">
+          <h1 class="text-center colorHeading">Add Instructor</h1>
+
+          <form #addInstructorForm="ngForm" (ngSubmit)="addNewInstructor(addInstructorForm)" novalidate> <!--We pass the form as the parameter to addNewFighter function-->
+              <div class="form-group colorHeading">
+                  <label for="firstname">Firstname:</label>
+                  <input type="text" class="form-control" id="firstname" [(ngModel)]="instructor.firstname" name="firstname" placeholder="Enter firstname" required>
+              </div>
+              <div class="form-group colorHeading">
+                  <label for="surname">Surname:</label>
+                  <input type="text" class="form-control" id="surname" [(ngModel)]="instructor.surname" name="surname" placeholder="Enter surname">
+              </div>
+              <div class="form-group colorHeading">
+                  <label for="age">Age:</label>
+                  <input type="text" class="form-control" id="age" [(ngModel)]="instructor.age" name="age" placeholder="Enter age">
+              </div>
+              <div class="form-group colorHeading">
+                  <label for="belt">Belt:</label>
+                  <select class="form-control" id="belt" [(ngModel)]="instructor.belt" name="belt">
+                      <option *ngFor="let belt of belts" [value]="belt"> {{belt}}</option>
+                    <!--
+            The dropdown list is made up of the belts array elements (items in the belt array white to black)
+            When we select one of these belts - <options> [value]="belt" e.g. [value]="purple"
+            The <select> listens to the <option [value]="belt"> and copies it to it's own [value]
+            NgModel can detect any changes in <select>'s [value] and assigns it to
+               this.instructor.belt via [(ngModel)] e.g. [(ngModel)]="instructor.belt"
+
+            WITHOUT {{belt}} ......the dropdown list will be blank!!!!
+
+                      <option  [value]="white"> White</option>
+                      <option  [value]="blue"> Blue</option>
+                      <option  [value]="purple"> Purple</option>
+                      <option  [value]="brown"> Brown</option>
+                      <option  [value]="black"> Black</option>
+                    -->
+                  </select>
+              </div>
+              <div class="form-group colorHeading">
+                  <label for="stripe">Stripes:</label>
+                  <select class="form-control" id="stripe" [(ngModel)]="instructor.stripe" name="stripe">
+                      <option *ngFor="let stripe of stripes" [value]="stripe"> {{stripe}}</option>
+                  </select>
+              </div>
+
+              <div class="form-group colorHeading">
+                <label for="year">Years training:</label>
+                <select class="form-control" id="year" [(ngModel)]="instructor.year" name="year">
+                    <option *ngFor="let year of years" [value]="year"> {{year}}</option>
+                </select>
+            </div>
+
+              <button type="submit" class="btn btn-danger pull-right">Submit</button>
+          </form>
+      </div>
+  </div>
+</div>

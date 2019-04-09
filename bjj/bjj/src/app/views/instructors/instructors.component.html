@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+      <h1 class="text-center colorHeading">Instructors</h1>
+  </div>
+  <div class="row">
+      <div class="card m-2" *ngFor="let instructor of instructors; let i = index">
+          <div class="text-center m-1">
+              <button class="btn btn-danger" (click)="getInstructorProfile(i)">View Full Profile</button>
+              <button class="btn btn-danger" (click)="getInstructorToEdit(i)">Edit</button>
+              <button class="btn btn-danger" (click)="deleteInstructor(i)">x</button>
+          </div>
+          <img class="card-img-top mt-3 rounded" src="../assets/images/bjj.jpg" style="max-width:50%;margin-left:25%;" alt="fighter-image">
+          <div class="card-body">
+              <h5 class="card-title">{{ instructor.firstname }} {{ instructor.surname }}</h5>
+              <p class="card-text mb-0">ObjectId:  <small>{{ instructor._id }}</small></p>
+              <p class="card-text mb-0">Age: <span class="pull-right">{{ instructor.age }}</span></p>
+              <p class="card-text mb-0">Belt:  {{ instructor.belt }}</p>
+              <p class="card-text">Stripes:  {{ instructor.stripe }}</p>
+              <p class="card-text">Years training:  {{ instructor.year }}</p>
+          </div>
+      </div>
+  </div>
+</div>
