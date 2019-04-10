@@ -3,7 +3,7 @@
       <div class="form_bg">
           <h1 class="text-center">Edit Instructor</h1>
 
-          <form #editInstructorForm="ngForm" (ngSubmit)="updateInstructor(editInstructorForm)" novalidate> <!--We pass the form as the parameter to addNewFighter function-->
+          <form #editInstructorForm="ngForm" (ngSubmit)="updateInstructor(editInstructorForm)" novalidate> 
               <div class="form-group">
                   <label for="firstname">Firstname:</label>
                   <input type="text" class="form-control" id="firstname" [(ngModel)]="instructor.firstname" name="firstname" placeholder="Enter firstname" required>
