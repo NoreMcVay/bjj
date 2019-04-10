@@ -41,7 +41,6 @@ export class EditInstructorComponent implements OnInit {
 
   updateInstructor(editInstructorForm: NgForm) {
       console.log('instructorForm: ', editInstructorForm.value);
-      // tslint:disable-next-line:max-line-length
       this.instructor = Object.assign(this.instructor, editInstructorForm.value);
       console.log('Instructor Updated details', this.instructor);
       this.http.put('/api/update-instructor', this.instructor).subscribe(() => console.log('Successfully posted!'));
