@@ -21,7 +21,7 @@ export class FighterProfileComponent implements OnInit {
 
   getFighter(Id) {
       this.http.get('/api/fighter/' + `${Id}`).subscribe((fighter) => {
-        this.fighter = fighter[0]; // It returned an array and I want an object so I select the first object in the array by using [0].
+        this.fighter = fighter[0]; 
         console.log('This Fighter :', this.fighter);
       });
   }
