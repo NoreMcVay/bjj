@@ -20,10 +20,10 @@ export class AddFighterComponent implements OnInit {
       this.fighter = new Fighter();
   }
 
-  addNewFighter(addFighterForm) { // the parameter is the form from the template
-      console.log('fighterForm: ', addFighterForm.value); // we want the form values
-      this.fighter = addFighterForm.value; // set this.fighter to the form's values
+  addNewFighter(addFighterForm) { 
+      console.log('fighterForm: ', addFighterForm.value); 
+      this.fighter = addFighterForm.value; 
       this.http.post('/api/add-fighter', this.fighter).subscribe(() => console.log('Successfully posted!'));
-      addFighterForm.resetForm(); // reset the form afterwards to clean it up
+      addFighterForm.resetForm(); 
   }
 }
