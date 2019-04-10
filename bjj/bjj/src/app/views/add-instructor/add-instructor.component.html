@@ -3,7 +3,7 @@
       <div class="form_bg">
           <h1 class="text-center colorHeading">Add Instructor</h1>
 
-          <form #addInstructorForm="ngForm" (ngSubmit)="addNewInstructor(addInstructorForm)" novalidate> <!--We pass the form as the parameter to addNewFighter function-->
+          <form #addInstructorForm="ngForm" (ngSubmit)="addNewInstructor(addInstructorForm)" novalidate> 
               <div class="form-group colorHeading">
                   <label for="firstname">Firstname:</label>
                   <input type="text" class="form-control" id="firstname" [(ngModel)]="instructor.firstname" name="firstname" placeholder="Enter firstname" required>
@@ -20,21 +20,6 @@
                   <label for="belt">Belt:</label>
                   <select class="form-control" id="belt" [(ngModel)]="instructor.belt" name="belt">
                       <option *ngFor="let belt of belts" [value]="belt"> {{belt}}</option>
-                    <!--
-            The dropdown list is made up of the belts array elements (items in the belt array white to black)
-            When we select one of these belts - <options> [value]="belt" e.g. [value]="purple"
-            The <select> listens to the <option [value]="belt"> and copies it to it's own [value]
-            NgModel can detect any changes in <select>'s [value] and assigns it to
-               this.instructor.belt via [(ngModel)] e.g. [(ngModel)]="instructor.belt"
-
-            WITHOUT {{belt}} ......the dropdown list will be blank!!!!
-
-                      <option  [value]="white"> White</option>
-                      <option  [value]="blue"> Blue</option>
-                      <option  [value]="purple"> Purple</option>
-                      <option  [value]="brown"> Brown</option>
-                      <option  [value]="black"> Black</option>
-                    -->
                   </select>
               </div>
               <div class="form-group colorHeading">
